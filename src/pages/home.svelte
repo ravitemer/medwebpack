@@ -4,11 +4,11 @@
     <NavLeft>
       <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="left" />
     </NavLeft>
-    <NavTitle sliding>f7svelte</NavTitle>
+    <NavTitle sliding>Ace OET</NavTitle>
     <NavRight>
       <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="right" />
     </NavRight>
-    <NavTitleLarge>f7svelte</NavTitleLarge>
+    <NavTitleLarge>Welcome!</NavTitleLarge>
   </Navbar>
   <!-- Toolbar -->
   <Toolbar bottom>
