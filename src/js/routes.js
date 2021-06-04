@@ -1,14 +1,39 @@
 
+import SocialPage from '../homepages/socialpage.svelte';
+import LPage from '../homepages/lpage.svelte';
+import RPage from '../homepages/rpage.svelte';
+import WPage from '../homepages/wpage.svelte';
+
+import SPage from '../homepages/spage.svelte';
+
 import HomePage from '../pages/home.svelte';
 import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
- 
-
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
 import RequestAndLoad from '../pages/request-and-load.svelte';
 import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
 var routes = [
+  {
+    path : "/SocialPage/",
+    component : SocialPage
+  },
+  {
+    path : "/LPage/",
+    component : LPage
+  },
+  {
+    path : "/RPage/",
+    component : RPage
+  },
+  {
+    path : "/WPage/",
+    component : WPage
+  },
+  {
+    path : "/SPage/",
+    component : SPage
+  },
   {
     path : "/container/",
     component : Container

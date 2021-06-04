@@ -1,4 +1,4 @@
-<Page>
+<!--Page>
   <Navbar title="Not found" backLink="Back" />
   <Block strong>
     <p>Sorry</p>
@@ -7,4 +7,4 @@
 </Page>
 <script>
   import { Page, Navbar, Block } from 'framework7-svelte';
-</script>
+</script-->

@@ -1,5 +1,5 @@
-<!--Page name="form">
-  <Navbar title="Form" backLink="Back"></Navbar>
+<!--Page name="settings">
+  <Navbar title="Settings" />
 
   <BlockTitle>Form Example</BlockTitle>
   <List noHairlinesMd>
@@ -60,7 +60,7 @@
       label="Range"
       input={false}
     >
-      <span slot="input">
+      <span slot="after">
         <Range value={50} min={0} max={100} step={1} />
       </span>
     </ListInput>

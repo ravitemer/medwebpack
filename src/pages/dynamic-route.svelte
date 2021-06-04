@@ -1,4 +1,4 @@
-<Page>
+<!--Page>
   <Navbar title="Dynamic Route" backLink="Back" />
   <Block strong>
     <ul>
@@ -31,4 +31,4 @@
 
   export let f7route;
   export let f7router;
-</script>
+</script-->

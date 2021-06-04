@@ -1,4 +1,4 @@
-<Page>
+<!--Page>
   <Navbar title="About" backLink="Back" />
   <BlockTitle>About My App</BlockTitle>
   <Block strong>
@@ -13,4 +13,4 @@
 </Page>
 <script>
   import { Page, Navbar, Block, BlockTitle } from 'framework7-svelte';
-</script>
+</script-->

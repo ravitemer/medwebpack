@@ -1,23 +1,21 @@
-<Page name="home">
-  <!-- Top Navbar -->
+<!--Page name="home">
+  
   <Navbar large sliding={false}>
     <NavLeft>
-      <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="left" />
+      <Link panelOpen="left"> <i class="fas fa-bars"></i> </Link>
     </NavLeft>
-    <NavTitle sliding>Ace OET</NavTitle>
+    <NavTitle sliding>Tabs</NavTitle>
     <NavRight>
-      <Link iconIos="f7:menu" iconAurora="f7:menu" iconMd="material:menu" panelOpen="right" />
+      <Link panelOpen="right"> <i class="fas fa-bars"></i> </Link>
     </NavRight>
-    <NavTitleLarge>Welcome!</NavTitleLarge>
+    <NavTitleLarge>Tabs</NavTitleLarge>
   </Navbar>
-  <!-- Toolbar -->
-  <Toolbar bottom>
-    <Link>Left Link</Link>
-    <Link>Right Link</Link>
-  </Toolbar>
-  <!-- Page content -->
-  <Block strong>
-    <p>Here is your blank Framework7 app. Let's see what we have here.</p>
+
+  
+  <Block inset strong>
+    <p class="color-red">This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+
+    <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
   </Block>
 
   <BlockTitle>Navigation</BlockTitle>
@@ -83,4 +81,4 @@
     Col,
     Button
   } from 'framework7-svelte';
-</script>
+</script-->
