@@ -1,26 +1,24 @@
-<script>  
-import {Page,Navbar} from 'framework7-svelte';
-import Card from "../components/card.svelte";
+<Page ptr>
 
-</script>
-<Page>
-<Navbar title="Reading"/>
-<div class="hor">
-<Card/>
+  <Main {...props}>
+   <h1 on:click={() => f7.sheet.open(".step")}>Reading Slot</h1>
+  </Main>
 
-<Card/>
-
-<Card/>
-
-</div>
 </Page>
 
+<script>  
+import {Page,f7} from 'framework7-svelte';
 
-<style> 
-.hor {
+import Main from './homeCom.svelte';
 
-  background : white;
-  width : 100%;
-  height : 300px;
+export let f7router
+export let f7route
+
+let props = {
+  title : "Reading",
+  slideTitle : "Reading",
+  index : 1,
+  f7router,f7route,
 }
-</style>
+
+</script>

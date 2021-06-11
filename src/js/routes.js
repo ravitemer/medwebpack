@@ -7,6 +7,7 @@ import WPage from '../homepages/wpage.svelte';
 import SPage from '../homepages/spage.svelte';
 
 import HomePage from '../pages/home.svelte';
+import BlogPage from '../components/bottomBlog.svelte';
 import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
@@ -14,6 +15,10 @@ import RequestAndLoad from '../pages/request-and-load.svelte';
 import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
 var routes = [
+  {
+    path : "/blog/:type",
+    component : BlogPage
+  },
   {
     path : "/SocialPage/",
     component : SocialPage
@@ -43,7 +48,7 @@ var routes = [
     component: HomePage,
   },
   {
-    path: '/about/',
+    path: '/about/:tab/:slide/',
     component: AboutPage,
   },
   {

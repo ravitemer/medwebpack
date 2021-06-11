@@ -1,0 +1,34 @@
+<Page ptr>
+
+  <Main {...props}>
+   <h1 on:click={() => f7.sheet.open(".step")}>Listening Slot</h1>
+  </Main>
+
+</Page>
+
+<script>  
+import {Page,f7} from 'framework7-svelte';
+//👉🏻👉🏻👉🏻👉🏻
+import {onMount} from 'svelte';
+import {request} from 'framework7';
+import {tabs} from '../js/store.js';
+
+import Main from './homeCom.svelte';
+
+export let f7router
+export let f7route
+
+let props = {
+  title : "Listening",
+  slideTitle : "Listening",
+  index : 0,
+  f7router,f7route,
+}
+
+onMount(async () => {
+  let data = (await request.json("https://untitled-6u5g49yuwqup.runkit.sh/tabs")).data
+  console.log("## Start Point : Data stored to Tabs")
+  tabs.set(data)
+})
+
+</script>

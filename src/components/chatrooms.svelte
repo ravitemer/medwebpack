@@ -14,8 +14,8 @@ const Load = async () =>{
                           data : params,
                           headers : {Authorization : "Bearer keyX4ugTRmF0cbHdc"},
                           dataType : "json",
-                          success: (d,x,y) => console.log("success",y),
-                          error : (e) => console.log("error",e)
+                          success: (d,x,y) => console.log("Timeline success"),
+                          error : (e) => console.log("Timeline error")
                                             }
                           records = (await request(options)).data.records
                 }

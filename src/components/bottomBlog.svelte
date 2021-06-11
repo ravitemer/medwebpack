@@ -4,24 +4,9 @@ export let f7route;
 
 import {request} from 'framework7';
 import {scale} from 'svelte/transition'
-let tabs = [{name:"All",view:"All",icon:"bars"},
-              {name:"Listening",view:"Listening",icon:"headphones-alt"},
-              {name:"Reading",view:"Reading",icon:"book-reader"},
-              {name:"Writing",view:"Writing",icon:"pencil-alt"},
-              {name:"Speaking",view:"Speaking",icon:"user-friends"},
-
-]
 
 let id ="app9S9jVaNIO0b7LF"
 let table="articles" 
-
-let ops = [{name:"All",view:"All",icon:"bars"},
-              {name:"Listening",view:"Listening",icon:"headphones-alt"},
-              {name:"Reading",view:"Reading",icon:"book-reader"},
-              {name:"Writing",view:"Writing",icon:"pencil-alt"},
-              {name:"Speaking",view:"Speaking",icon:"user-friends"},
-
-]
 
 const Load = async (view="Grid view") =>{
                          let params = {maxRecords:10,view:view}

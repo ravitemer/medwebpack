@@ -1,8 +1,7 @@
 <Swiper class="swiper-init swiperInstance" onClick={(s,e) => onSlideClicked(s.clickedIndex)} pagination effect={'coverflow'} centeredSlides={true} slidesPerView={'1'}>
         {#each slides as {title,children},i (i)}
           <SwiperSlide> 
-             <BlockTitle>{slideTitle}</BlockTitle>
-             <Block inset strong>
+             <Block class="no-margin-top" inset strong>
                 <h1>{title}</h1>
                 <p>{"Later..."}</p>
                 <p>60 minutes</p>
@@ -21,9 +20,6 @@
 import {Swiper,SwiperSlide,Block,BlockTitle,BlockHeader,BlockFooter,f7} from 'framework7-svelte';
 
 import {createEventDispatcher ,afterUpdate} from 'svelte'
-
-export let slideTitle = "Reading"
-export let index = 0
 export let slides;
 
 afterUpdate(() => {
@@ -48,5 +44,14 @@ function onSlideClicked(i){
 
 <style> 
 
+:global(.swiper-pagination-bullet){
+  opacity : 0.2;
+  background : var(--f7-theme-color)
+}
+
+:global(.swiper-pagination-bullet-active){
+  opacity : 1;
+  background : var(--f7-theme-color)
+}
 
 </style>

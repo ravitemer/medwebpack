@@ -20,19 +20,19 @@
     </View>
   </Panel-->
                             <Views tabs labels class="safe-areas">
-                          <MyNavBar/>
+                          <MyNavBar />
         <Toolbar id="tool" tabbar bottom>
 
-<Link tabLink="#view-L"> <i class="fas fa-headphones-alt"></i> </Link>
+<Link tabLinkActive tabLink="#view-L"> <i class="fas fa-headphones-alt"></i> </Link>
 <Link tabLink="#view-R"> <i class="fas fa-book-reader"></i> </Link>
 
-<Link tabLink="#view-Social" tabLinkActive><i style="font-size:25px" class="fas fa-scroll"></i> </Link>
+<Link tabLink="#view-Social"><i style="font-size:25px" class="fas fa-home"></i> </Link>
 
 <Link tabLink="#view-W"> <i class="fas fa-pencil-alt"></i> </Link>
 <Link tabLink="#view-S"> <i class="fas fa-user-friends"></i> </Link>
         </Toolbar>
-<View id="view-Social" name="Social" tab url="/SocialPage/" main tabActive/>
-<View id="view-L" name="Listening" tab url="/LPage/" />
+<View id="view-Social" name="Social" tab url="/SocialPage/"/>
+<View id="view-L" name="Listening" tab url="/LPage/"  main tabActive/>
 <View id="view-R" name="Reading" tab url="/RPage/" />
 <View id="view-W" name="Writing" tab url="/WPage/" />
 <View id="view-S" name="Speaking" tab url="/SPage/" />
@@ -43,21 +43,6 @@
    
     <PageContent>
       <Block>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ducimus dolorum ipsa
-          aliquid accusamus perferendis laboriosam delectus numquam minima animi, libero illo in
-          tempora harum sequi corporis alias ex adipisci.
-        </p>
-        <p>
-          Sunt magni enim saepe quasi aspernatur delectus consectetur fugiat necessitatibus qui sed,
-          similique quis facere tempora, laudantium quae expedita ea, aperiam dolores. Aut deserunt
-          soluta alias magnam. Consequatur, nisi, enim.
-        </p>
-        <p>
-          Eaque maiores ducimus, impedit unde culpa qui, explicabo accusamus, non vero corporis
-          voluptatibus similique odit ab. Quaerat quasi consectetur quidem libero? Repudiandae
-          adipisci vel voluptatum, autem libero minus dignissimos repellat.
-        </p>
         <p>
           Iusto, est corrupti! Totam minus voluptas natus esse possimus nobis, delectus veniam
           expedita sapiente ut cum reprehenderit aliquid odio amet praesentium vero temporibus
@@ -96,6 +81,26 @@
       </Page>
     </View>
   </Popup>
+  
+    <Sheet
+    class="step"
+    style="height: auto"
+    swipeToClose
+    swipeToStep
+    push
+    backdrop>
+    <div class="swipe-handler" onClick={() => toggleSwipeStep()} />
+    <div class="sheet-modal-swipe-step">
+      <div class="display-flex padding justify-content-space-between align-items-center">
+        <div style="font-size: 18px"><b>Error:</b></div>
+        <div style="font-size: 22px"><b>404</b></div>
+      </div>
+      <div class="padding-horizontal padding-bottom">
+        <Button large fill>{$temp.title}</Button>
+        <div class="margin-top text-align-center">{$temp.desc}</div>
+      </div>
+    </div>
+  </Sheet>
 </App>
 <script>
   import { onMount } from 'svelte';
@@ -120,6 +125,7 @@
     BlockTitle,
     LoginScreen,
     LoginScreenTitle,
+    Button,
     List,
     ListItem,
     ListInput,
@@ -129,7 +135,7 @@
   //import cordovaApp from '../js/cordova-app';
 
   import routes from '../js/routes';
-
+ import {temp} from "../js/store.js";
   const device = getDevice();
   // Framework7 Parameters
   let f7params = {
@@ -172,6 +178,10 @@
   };
   onMount(() => {
     f7ready(() => {
+      
+      if (!f7.online){
+        f7.sheet.open(".step")
+      }
       // Init cordova APIs (see cordova-app.js)
       if (f7.device.cordova) {
         //cordovaApp.init(f7);
@@ -182,6 +192,10 @@
 
     });
   })
+  
+  function toggleSwipeStep() {
+    f7.sheet.stepToggle('.step');
+  }
 </script>
 
 <style>
