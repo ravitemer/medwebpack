@@ -34,7 +34,7 @@ let ops = [{name:"All",view:"All",icon:"bars"},
 
 <style> 
 
-.myicon {
+:global(.myicon) {
  background : var(--f7-theme-color);
  color: white;
   padding : 10px;

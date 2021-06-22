@@ -1,7 +1,8 @@
-<Swiper class="swiper-init swiperInstance" onClick={(s,e) => onSlideClicked(s.clickedIndex)} pagination effect={'coverflow'} centeredSlides={true} slidesPerView={'1'}>
-        {#each slides as {title,children},i (i)}
+{#key slides}
+<Swiper class="swiper-init padding no-padding-horizontal swiperInstance" {centeredSlides} onClick={(s,e) => onSlideClicked(s.clickedIndex)} slidesPerView={no}>
+        {#each slides as {title},i (i)}
           <SwiperSlide> 
-             <Block class="no-margin-top" inset strong>
+             <Block class="no-margin margin-right" inset strong>
                 <h1>{title}</h1>
                 <p>{"Later..."}</p>
                 <p>60 minutes</p>
@@ -12,18 +13,20 @@
           </SwiperSlide>
         {/each}
 </Swiper>
-
-
-
+{/key}
+<svelte:window bind:outerWidth={w}/>
 
 <script>  
 import {Swiper,SwiperSlide,Block,BlockTitle,BlockHeader,BlockFooter,f7} from 'framework7-svelte';
 
 import {createEventDispatcher ,afterUpdate} from 'svelte'
 export let slides;
-
+let no = 1.02
+let w ; 
+let centeredSlides = true;
+$: if (w > 500) { no = 2.02;centeredSlides = false} else {no = 1.02;centeredSlides = true}
 afterUpdate(() => {
-    f7.swiper.get(".swiperInstance").$el.map(e => e.swiper.update())
+    //f7.swiper.get(".swiperInstance").$el.map(e => e.swiper.update())
 })
 
 const dispatch = createEventDispatcher();

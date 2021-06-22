@@ -11,13 +11,12 @@ import {Page,f7} from 'framework7-svelte';
 //👉🏻👉🏻👉🏻👉🏻
 import {onMount} from 'svelte';
 import {request} from 'framework7';
-import {tabs} from '../js/store.js';
+import {ltests,tabs} from '../js/store.js';
 
 import Main from './homeCom.svelte';
 
 export let f7router
 export let f7route
-
 let props = {
   title : "Listening",
   slideTitle : "Listening",
@@ -26,9 +25,13 @@ let props = {
 }
 
 onMount(async () => {
-  let data = (await request.json("https://untitled-6u5g49yuwqup.runkit.sh/tabs")).data
-  console.log("## Start Point : Data stored to Tabs")
-  tabs.set(data)
+  //let data = (await request.json("https://untitled-6u5g49yuwqup.runkit.sh/tabs")).data
+  let appdata = (await request.json("https://aceoetexam-default-rtdb.firebaseio.com/appdata.json")).data
+  //tabs.set(data)
+  //console.log("## Start Point : Data stored to Tabs")
+  tabs.set(appdata)
+  console.log("## Loaded Appdata  from firebase: Data stored to tabs")
+  //console.log($tabs)
 })
 
 </script>

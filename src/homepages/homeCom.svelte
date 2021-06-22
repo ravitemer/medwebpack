@@ -1,8 +1,8 @@
 <MyNavBar {title}/>
 <BlockTitle class="margin-top-half" medium>Structure</BlockTitle>
 <TopSwiper on:slideClick={e => handleSlideClick(e.detail.slide)} {slides} />
-<Practice />
-<slot><h1>Default Slot</h1></slot>
+<Practice tab={index}/>
+<slot></slot>
 
 
 
@@ -17,16 +17,36 @@ export let index = 0
 import TopSwiper from "../components/topSwiper.svelte";
 import MyNavBar from '../components/mynavbar.svelte';
 import Practice from '../components/practice.svelte';
+import {onMount} from "svelte";
+import {tabs,tempObj} from "../js/store.js"
 
-import {tabs,temp} from "../js/store.js"
-
-$ : slides = $tabs[index].children[0].children.filter(b => b.type === "children")
-
+$ : slidesObj = $tabs[index].children["Slides"]
+$ : slides = Object.entries(slidesObj).filter(([key,value]) => key !== "para").map(([key,value]) => {
+  return { title: key, content : value }
+})
+/*(() => {
+  let arr = [];
+  for (let [key, value] of Object.entries(slidesObj)) {
+    if (key !== "para") arr.push({ title: key, content : value });
+  }
+  return arr;
+})()*/
+//$ : slides = $tabs[index].children[0].children.filter(b => b.type === "children")
+$ : {
+  let currentSlides = {}
+  currentSlides[index] = slides
+  tempObj.update(obj => obj = {...obj,...currentSlides})
+  //console.log(tempObj)
+}
 function handleSlideClick(slide){
   f7router.navigate(`/about/${index}/${slide}/`)
   //console.log(f7route)
   //f7router.navigate(`/about/`)
 }
+onMount(() => {
+ 
+ 
+})
 
 </script> 
 
