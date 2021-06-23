@@ -2,10 +2,10 @@
 <BlockTitle class="margin-top-half" medium>Practice</BlockTitle>
 {#key arr}
 <List inset>
-{#each arr as num,i (i)}
-<ListItem href="/Lmock/{tab}/{i}">
+{#each arr as {testNum,href},i (i)}
+<ListItem {href}>
   <div transition:scale>
-    Test {i + 1}
+    Test {testNum + 1}
  </div>
 </ListItem>
 {/each}
@@ -21,7 +21,8 @@ $ : noOfTests = $tabs[tab].children["Tests"].length ? $tabs[tab].children["Tests
 $ : arr = (() => {
   let ar = []
 for (var i = 0; i < noOfTests; i++) {
-   ar.push(i);
+  let base = tab === 0 ? `/LMock/${tab}/${i}` : tab === 1 ? `/RTest/${tab}/${i}` : ""
+   ar.push({testNum : i,href : base});
 }
   return ar})()
 let rows = [

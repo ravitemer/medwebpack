@@ -12,7 +12,9 @@ import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
 
 import Lmock from '../pages/lmock.svelte';
-import LpartA from "../pages/lparta.svelte";
+import LTest from "../pages/ltest.svelte";
+import RTest from "../pages/rtest.svelte";
+
 
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
 import RequestAndLoad from '../pages/request-and-load.svelte';
@@ -20,8 +22,12 @@ import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
 var routes = [
   {
-    path : "/LpartA/:part",
-    component : LpartA
+    path : "/RTest/:tab/:number",
+    component : RTest
+  },
+  {
+    path : "/LTest/:part",
+    component : LTest
   },
   {
     path : "/Lmock/:tab/:number",

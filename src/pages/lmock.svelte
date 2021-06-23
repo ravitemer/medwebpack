@@ -23,10 +23,10 @@
   export let f7router
   export let f7route;
  let subtests = [
-    {name : "Full Test",qs: "Q : 1-42",href:"/LpartA/Full Test"},
-   {name : "Part A",qs : "Q : 1-24",href:`/LpartA/Part-A`},
-   {name : "Part B",qs : "Q : 25-30",href:"/LpartA/Part-B"},
-   {name : "Part C",qs: "Q : 31-42",href:"/LpartA/Part-C"},
+    {name : "Full Test",qs: "Q : 1-42",href:"/LTest/Full Test"},
+   {name : "Part A",qs : "Q : 1-24",href:`/LTest/Part-A`},
+   {name : "Part B",qs : "Q : 25-30",href:"/LTest/Part-B"},
+   {name : "Part C",qs: "Q : 31-42",href:"/LTest/Part-C"},
 
  ]
  let num = f7route.params.number
