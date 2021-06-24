@@ -31,11 +31,11 @@
 <Link tabLink="#view-W"> <i class="fas fa-pencil-alt"></i> </Link>
 <Link tabLink="#view-S"> <i class="fas fa-user-friends"></i> </Link>
         </Toolbar>
-<View id="view-Social" name="Social" tab url="/SocialPage/"/>
-<View id="view-L" name="Listening" tab url="/LPage/"  main tabActive/>
-<View id="view-R" name="Reading" tab url="/RPage/" />
-<View id="view-W" name="Writing" tab url="/WPage/" />
-<View id="view-S" name="Speaking" tab url="/SPage/" />
+<View id="view-Social" class="safe-areas" name="Social" tab url="/SocialPage/"/>
+<View id="view-L" class="safe-areas" name="Listening" tab url="/LPage/"  main tabActive/>
+<View id="view-R" class="safe-areas" name="Reading" tab url="/RPage/" />
+<View id="view-W" class="safe-areas" name="Writing" tab url="/WPage/" />
+<View id="view-S" class="safe-areas" name="Speaking" tab url="/SPage/" />
                             </Views>
 <!-- Popup -->
 

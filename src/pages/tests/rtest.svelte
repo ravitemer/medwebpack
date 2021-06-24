@@ -2,11 +2,11 @@
 import {Page,Toolbar,Link,Tabs,Tab,Navbar,NavRight} from 'framework7-svelte'
 import {onMount} from 'svelte';
 
-import RPartA from '../components/TestParts/readPartA.svelte';
-import RPartB from '../components/TestParts/readPartB.svelte';
-import RPartC from '../components/TestParts/readPartC.svelte';
+import RPartA from '../../components/TestParts/readPartA.svelte';
+import RPartB from '../../components/TestParts/readPartB.svelte';
+import RPartC from '../../components/TestParts/readPartC.svelte';
 
-import {tabs} from '../js/store.js';
+import {tabs} from '../../js/store.js';
 
 function exit(){
    f7router.back()
@@ -30,7 +30,7 @@ let tab = f7route.params.tab
 let test = "Reading Test " + (new Number(testNumber) + 1)
 </script>
 
-<Page noToolbar pageContent={false}>
+<Page noSwipeback noToolbar pageContent={false}>
    <Navbar  title={test} sliding={false}>
      <NavRight>
        <Link onClick={exit} >Exit </Link>

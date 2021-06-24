@@ -1,4 +1,4 @@
-<Page noToolbar>
+<Page noSwipeback noToolbar>
    <Navbar  sliding={false} title={part}>
      <NavRight>
        <Link onClick={exit} >Exit </Link>
@@ -19,11 +19,11 @@
 </Page>
 <script>
   import { Link,Page, NavRight,Navbar, Block, BlockTitle,BlockHeader } from 'framework7-svelte';
-  import PartA from "../components/TestParts/lisPartA.svelte"
-  import PartB from "../components/TestParts/lisPartB.svelte"
-  import PartC from "../components/TestParts/lisPartC.svelte"
+  import PartA from "../../components/TestParts/lisPartA.svelte"
+  import PartB from "../../components/TestParts/lisPartB.svelte"
+  import PartC from "../../components/TestParts/lisPartC.svelte"
   import {onMount} from 'svelte';
-  import {tempTest} from '../js/store.js';
+  import {tempTest} from '../../js/store.js';
   function exit(){
    f7router.back()
   }
@@ -68,8 +68,6 @@
    partBmcqs = getMcqs(partB)
    partC1mcqs = getMcqs(pre1)
    partC2mcqs = getMcqs(pre2)
-   console.log("pre1",pre1)
-   console.log("partc1mcqs", partC1mcqs)
     /*let currentTab = $tabs[tab]
     mainTitle = currentTab.title
    

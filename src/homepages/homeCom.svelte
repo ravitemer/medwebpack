@@ -1,7 +1,12 @@
 <MyNavBar {title}/>
-<BlockTitle class="margin-top-half" medium>Structure</BlockTitle>
+<BlockTitle class="margin-top" medium>Structure</BlockTitle>
 <TopSwiper on:slideClick={e => handleSlideClick(e.detail.slide)} {slides} />
+{#if index === 0 || index === 1}
 <Practice tab={index}/>
+{/if}
+{#if index === 2}
+<WritingPractice />
+{/if}
 <slot></slot>
 
 
@@ -17,6 +22,8 @@ export let index = 0
 import TopSwiper from "../components/topSwiper.svelte";
 import MyNavBar from '../components/mynavbar.svelte';
 import Practice from '../components/practice.svelte';
+import WritingPractice from '../components/writingPractice.svelte';
+
 import {onMount} from "svelte";
 import {tabs,tempObj} from "../js/store.js"
 

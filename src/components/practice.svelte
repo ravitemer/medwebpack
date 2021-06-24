@@ -1,5 +1,5 @@
 
-<BlockTitle class="margin-top-half" medium>Practice</BlockTitle>
+<BlockTitle class="margin-top" medium>Practice</BlockTitle>
 {#key arr}
 <List inset>
 {#each arr as {testNum,href},i (i)}

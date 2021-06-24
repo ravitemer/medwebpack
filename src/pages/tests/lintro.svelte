@@ -18,7 +18,7 @@
   import { Page, Navbar, Block, BlockTitle } from 'framework7-svelte';
   import {onMount} from 'svelte';
   
-  import {tempTest,tabs} from '../js/store.js';
+  import {tempTest,tabs} from '../../js/store.js';
   $ : tempTest.set($tabs[tab].children["Tests"][num].children)
   export let f7router
   export let f7route;

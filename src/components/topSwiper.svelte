@@ -1,5 +1,5 @@
 {#key slides}
-<Swiper class="swiper-init padding no-padding-horizontal swiperInstance" {centeredSlides} onClick={(s,e) => onSlideClicked(s.clickedIndex)} slidesPerView={no}>
+<Swiper class="swiper-init no-padding padding-horizontal swiperInstance" {centeredSlides} onClick={(s,e) => onSlideClicked(s.clickedIndex)} slidesPerView={no}>
         {#each slides as {title},i (i)}
           <SwiperSlide> 
              <Block class="no-margin margin-right" inset strong>

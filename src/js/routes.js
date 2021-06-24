@@ -11,9 +11,12 @@ import BlogPage from '../components/bottomBlog.svelte';
 import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
 
-import Lmock from '../pages/lmock.svelte';
-import LTest from "../pages/ltest.svelte";
-import RTest from "../pages/rtest.svelte";
+import LIntro from '../pages/tests/lintro.svelte';
+import LTest from "../pages/tests/ltest.svelte";
+import RTest from "../pages/tests/rtest.svelte";
+import WTest from "../pages/tests/wtest.svelte";
+import WIntro from "../pages/tests/wintro.svelte";
+import WAnswer from "../pages/tests/wanswer.svelte";
 
 
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
@@ -21,6 +24,18 @@ import RequestAndLoad from '../pages/request-and-load.svelte';
 import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
 var routes = [
+  {
+    path : "/WAnswer/",
+    component : WAnswer
+  },
+    {
+    path : "/WIntro/:type/:number",
+    component : WIntro
+  },
+  {
+    path : "/WTest/",
+    component : WTest
+  },
   {
     path : "/RTest/:tab/:number",
     component : RTest
@@ -31,7 +46,7 @@ var routes = [
   },
   {
     path : "/Lmock/:tab/:number",
-    component : Lmock
+    component : LIntro
   },
   {
     path : "/blog/:type",
