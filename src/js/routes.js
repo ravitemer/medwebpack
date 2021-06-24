@@ -1,20 +1,91 @@
 
+import SocialPage from '../homepages/socialpage.svelte';
+import LPage from '../homepages/lpage.svelte';
+import RPage from '../homepages/rpage.svelte';
+import WPage from '../homepages/wpage.svelte';
+import SPage from '../homepages/spage.svelte';
+
 import HomePage from '../pages/home.svelte';
+import BlogPage from '../components/bottomBlog.svelte';
 import AboutPage from '../pages/about.svelte';
 import FormPage from '../pages/form.svelte';
+
+import LIntro from '../pages/tests/lintro.svelte';
+import LTest from "../pages/tests/ltest.svelte";
+import RTest from "../pages/tests/rtest.svelte";
+import WTest from "../pages/tests/wtest.svelte";
+import WIntro from "../pages/tests/wintro.svelte";
+import STest from "../pages/tests/stest.svelte";
+import SIntro from "../pages/tests/sintro.svelte";
 
 
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
 import RequestAndLoad from '../pages/request-and-load.svelte';
 import NotFoundPage from '../pages/404.svelte';
-
+import Container from "../pages/container.svelte";
 var routes = [
+  {
+    path : "/SIntro/:type/:number",
+    component : SIntro
+  },
+  {
+    path : "/STest/",
+    component : STest
+  },
+    {
+    path : "/WIntro/:type/:number",
+    component : WIntro
+  },
+  {
+    path : "/WTest/",
+    component : WTest
+  },
+  {
+    path : "/RTest/:tab/:number",
+    component : RTest
+  },
+  {
+    path : "/LTest/:part",
+    component : LTest
+  },
+  {
+    path : "/Lmock/:tab/:number",
+    component : LIntro
+  },
+  {
+    path : "/blog/:type",
+    component : BlogPage
+  },
+  {
+    path : "/SocialPage/",
+    component : SocialPage
+  },
+  {
+    path : "/LPage/",
+    component : LPage
+  },
+  {
+    path : "/RPage/",
+    component : RPage
+  },
+  {
+    path : "/WPage/",
+    component : WPage
+  },
+  {
+    path : "/SPage/",
+    component : SPage
+  },
+  {
+    path : "/container/",
+    component : Container
+  },
   {
     path: '/',
     component: HomePage,
   },
   {
-    path: '/about/',
+    path: '/about/:tab/:slide/',
     component: AboutPage,
   },
   {

@@ -1,4 +1,4 @@
-<Page name="form">
+<!--Page name="form">
   <Navbar title="Form" backLink="Back"></Navbar>
 
   <BlockTitle>Form Example</BlockTitle>
@@ -172,4 +172,4 @@
     Range,
     Block
   } from 'framework7-svelte';
-</script>
+</script-->

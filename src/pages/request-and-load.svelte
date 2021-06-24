@@ -1,4 +1,4 @@
-<Page>
+<!--Page>
   <Navbar title={`${user.firstName} ${user.lastName}`} backLink="Back" />
   <Block strong>
     {user.about}
@@ -18,4 +18,4 @@
   import { Page, Navbar, Block, List, ListItem } from 'framework7-svelte';
 
   export let user;
-</script>
+</script-->
