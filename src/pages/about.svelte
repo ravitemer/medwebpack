@@ -1,7 +1,7 @@
 <Page>
  <Navbar large transparent title={mainTitle} backLink="Back" />
  <BlockTitle medium>{subTitle}</BlockTitle>
- <Block strong>
+ <Block>
  {@html html}
 </Block>
 </Page>
@@ -22,7 +22,7 @@ onMount(() => {
  
   let {tab,slide} = f7route.params
   let currentSlide = $tempObj[tab][slide]
-  mainTitle = currentSlide.title 
+  mainTitle = tab === "0" ? "Listening" : (tab === "1" ? "Reading" : (tab === "2" ? "Writing" : "Speaking"))
   subTitle = currentSlide.title 
   html = currentSlide.content.html ? currentSlide.content.html.para : "Working on this..."
   

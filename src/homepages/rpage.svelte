@@ -17,7 +17,7 @@ export let f7route
 let props = {
   title : "Reading",
   slideTitle : "Reading",
-  index : 1,
+  tab : 1,
   f7router,f7route,
 }
 

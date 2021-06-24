@@ -18,16 +18,22 @@
 
 <script>  
 import {Swiper,SwiperSlide,Block,BlockTitle,BlockHeader,BlockFooter,f7} from 'framework7-svelte';
-
+import {onMount} from "svelte";
 import {createEventDispatcher ,afterUpdate} from 'svelte'
-export let slides;
+import {tabs,tempObj} from '../js/store.js';
 let no = 1.02
 let w ; 
 let centeredSlides = true;
+//let slides = []
+export let tab = 0
+$ : slides = Object.entries($tabs[tab].children["Slides"]).filter(([key,value]) => key !== "para").map(([key,value]) => {return { title: key, content : value }})
+$ : {
+  let currentSlides = {}
+  currentSlides[tab] = slides
+  tempObj.update(obj => obj = {...obj,...currentSlides})
+}
+
 $: if (w > 500) { no = 2.02;centeredSlides = false} else {no = 1.02;centeredSlides = true}
-afterUpdate(() => {
-    //f7.swiper.get(".swiperInstance").$el.map(e => e.swiper.update())
-})
 
 const dispatch = createEventDispatcher();
 let isOpened = false; 

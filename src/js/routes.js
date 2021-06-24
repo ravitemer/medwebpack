@@ -3,7 +3,6 @@ import SocialPage from '../homepages/socialpage.svelte';
 import LPage from '../homepages/lpage.svelte';
 import RPage from '../homepages/rpage.svelte';
 import WPage from '../homepages/wpage.svelte';
-
 import SPage from '../homepages/spage.svelte';
 
 import HomePage from '../pages/home.svelte';
@@ -16,7 +15,8 @@ import LTest from "../pages/tests/ltest.svelte";
 import RTest from "../pages/tests/rtest.svelte";
 import WTest from "../pages/tests/wtest.svelte";
 import WIntro from "../pages/tests/wintro.svelte";
-import WAnswer from "../pages/tests/wanswer.svelte";
+import STest from "../pages/tests/stest.svelte";
+import SIntro from "../pages/tests/sintro.svelte";
 
 
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
@@ -25,8 +25,12 @@ import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
 var routes = [
   {
-    path : "/WAnswer/",
-    component : WAnswer
+    path : "/SIntro/:type/:number",
+    component : SIntro
+  },
+  {
+    path : "/STest/",
+    component : STest
   },
     {
     path : "/WIntro/:type/:number",
