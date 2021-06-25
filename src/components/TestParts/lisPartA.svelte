@@ -1,22 +1,26 @@
-   <BlockTitle medium>Audio 1 : 1-12</BlockTitle>
-      <Block>
-    <BlockHeader>{con1.desc}</BlockHeader>
-    {#each con1.headings as [key,value],i (i)}
-      <h3 class="text-color-blue">{key}</h3>
-      {@html `<p>${value.para}</p>`}
-    {/each}
-   </Block>
-      <BlockTitle medium>Audio 2 : 13-24</BlockTitle>
-      <Block>
-    <BlockHeader>{con2.desc}</BlockHeader>
-    {#each con2.headings as [key,value],i (i)}
-      <h3 class="text-color-blue">{key}</h3>
-      {@html `<p>${value.para}</p>`}
-    {/each}
-   </Block>
-   <script>  
-   import {BlockTitle,Block,BlockHeader} from 'framework7-svelte';
-   export let con1
-   export let con2
-   </script>
+<script>  
+import {BlockTitle,Block,BlockHeader} from 'framework7-svelte';
+
+export let extract1
+export let extract2
+export let desc;
+</script>
    
+
+ <Block>{@html desc}</Block>
+ <BlockTitle medium>Extract 1 : Q1-12</BlockTitle>
+ <Block>
+   <BlockHeader>{extract1.desc}</BlockHeader>
+   {#each extract1.headings as [subheading,content],i (i)}
+      <h3 class="text-color-blue">{subheading}</h3>
+      {@html content.para}
+    {/each}
+ </Block>
+ <BlockTitle medium>Extract 2 : Q13-24</BlockTitle>
+ <Block>
+    <BlockHeader>{extract2.desc}</BlockHeader>
+    {#each extract2.headings as [subheading,content],i (i)}
+      <h3 class="text-color-blue">{subheading}</h3>
+      {@html content.para}
+    {/each}
+</Block>

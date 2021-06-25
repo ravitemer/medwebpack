@@ -4,10 +4,10 @@ import PartB from "./lisPartB.svelte"
 
 export let partC1mcqs;
 export let partC2mcqs;
-
+export let desc;
 </script>
 
-
+<Block>{@html desc}</Block>
 <BlockTitle>Audio 1 : 31-36</BlockTitle>
 <PartB mcqs={partC1mcqs} />
 

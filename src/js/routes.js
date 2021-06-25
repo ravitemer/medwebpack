@@ -1,4 +1,3 @@
-
 import SocialPage from '../homepages/socialpage.svelte';
 import LPage from '../homepages/lpage.svelte';
 import RPage from '../homepages/rpage.svelte';
@@ -17,22 +16,27 @@ import WTest from "../pages/tests/wtest.svelte";
 import WIntro from "../pages/tests/wintro.svelte";
 import STest from "../pages/tests/stest.svelte";
 import SIntro from "../pages/tests/sintro.svelte";
-
+import TestIntro from "../pages/tests/testintro.svelte";
 
 import DynamicRoutePage from '../pages/dynamic-route.svelte';
 import RequestAndLoad from '../pages/request-and-load.svelte';
 import NotFoundPage from '../pages/404.svelte';
 import Container from "../pages/container.svelte";
+
 var routes = [
   {
-    path : "/SIntro/:type/:number",
+    path : "/TestIntro/:tab/:testTitle",
+    component : TestIntro
+  },
+  {
+    path : "/SIntro/:type/:title",
     component : SIntro
   },
   {
     path : "/STest/",
     component : STest
   },
-    {
+  {
     path : "/WIntro/:type/:number",
     component : WIntro
   },
@@ -41,11 +45,11 @@ var routes = [
     component : WTest
   },
   {
-    path : "/RTest/:tab/:number",
+    path : "/RTest/",
     component : RTest
   },
   {
-    path : "/LTest/:part",
+    path : "/LTest/",
     component : LTest
   },
   {

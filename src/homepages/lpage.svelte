@@ -25,7 +25,7 @@ let props = {
 }
 onMount(async () => {
   //let data = (await request.json("https://untitled-6u5g49yuwqup.runkit.sh/tabs")).data
-  if ($tabs[1].children["Tests"].length < 1){
+  if (true){
   let appdata = (await request.json("https://aceoetexam-default-rtdb.firebaseio.com/appdata.json")).data
   //tabs.set(data)
   //console.log("##
