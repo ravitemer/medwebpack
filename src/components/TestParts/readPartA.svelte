@@ -30,9 +30,8 @@ function onIndexSelect(itemContent, itemIndex) {
      <List ul={false}>
      {#each data.blanks as blank,i (i)}
        <ListGroup>
-         <ListItem title={`${i + 1}`} groupTitle><Badge>{`Q${i + 1}`}</Badge> </ListItem>
+         <ListItem title={`${i + 1}`} groupTitle> <Badge>{`${i + 1}`}</Badge> </ListItem>
          <Block class="no-margin" strong>    
-           <BlockTitle>{ i + 1}</BlockTitle>   
            <p>{blank}</p>
          </Block>
        </ListGroup>

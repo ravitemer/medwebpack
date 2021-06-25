@@ -26,6 +26,6 @@ function handleSlideClick(slide){f7router.navigate(`/about/${tab}/${slide}/`)}
 <LRPractice {tab}/>
 {/if}
 {#if tab === 2 || tab === 3}
-<WSPractice {tab}/>
+<WSPractice {f7router} {tab}/>
 {/if}
 <slot></slot>

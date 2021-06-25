@@ -22,7 +22,7 @@ let partADesc = `<p>In this part of the test, you’ll hear two different extrac
 
  
 function exit(){
-   f7router.back()
+   f7router.back("/LPage/",{force:true})
 }
 function extractLPartAConsultation(obj){
    let desc = obj.para

@@ -24,7 +24,7 @@ document.querySelector("#wtc-"+ val.replaceAll(" ","")).scrollIntoView({behavior
 }
 
 function exit(){
- f7router.back()
+ f7router.back("/WPage/",{force:true})
 }
 </script>
 

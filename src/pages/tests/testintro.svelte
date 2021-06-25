@@ -27,7 +27,7 @@ $ : tempTest.set(currentTest)
    <Block>
      {@html subTestIntro}
      <div style="width:70%;margin:auto;">
-        <Button href={subTestHref}>Continue</Button>
+        <Button fill href={subTestHref}>Continue</Button>
      </div>
    </Block>
 </Page>

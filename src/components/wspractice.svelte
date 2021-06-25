@@ -4,6 +4,7 @@ import {scale} from 'svelte/transition';
 
 import {tabs} from "../js/store.js"
 
+export let f7router;
 export let tab;
 
 $ : accordionItems = generateAccordionItems($tabs,tab) 

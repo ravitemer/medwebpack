@@ -9,7 +9,7 @@ export let f7router
 let desc = `<p>Read the case notes and complete the writing task which follows.</p>`
 
 function exit(){
- f7router.back()
+ f7router.back("/SPage/",{force:true})
 }
 </script>
 

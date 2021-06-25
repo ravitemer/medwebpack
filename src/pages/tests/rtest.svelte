@@ -29,7 +29,7 @@ let partCDesc = `
 <p>In this part of the test, there are two texts about different aspects of healthcare. For questions 7-22, choose the answer (A, B, C or D) which you think fits best according to the text.</p>
 `
 function exit(){
-   f7router.back()
+   f7router.back("/RPage/",{force:true})
 }
 function extractPartA({Blanks,para,unsupportedText,...Passages}){
   //ccccc 
