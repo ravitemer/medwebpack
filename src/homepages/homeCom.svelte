@@ -22,10 +22,5 @@ function handleSlideClick(slide){f7router.navigate(`/about/${tab}/${slide}/`)}
 <MyNavBar {title}/>
 <BlockTitle class="margin-top" medium>Structure</BlockTitle>
 <TopSwiper {tab} on:slideClick={e => handleSlideClick(e.detail.slide)} />
-{#if tab === 0 || tab === 1}
-<LRPractice {tab}/>
-{/if}
-{#if tab === 2 || tab === 3}
 <WSPractice {f7router} {tab}/>
-{/if}
 <slot></slot>
