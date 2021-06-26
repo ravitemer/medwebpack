@@ -7,7 +7,7 @@
 </Page>
 
 <script>  
-import {Page,f7,Block} from 'framework7-svelte'; 
+import {Page,Block,f7} from 'framework7-svelte'; 
 //👉🏻👉🏻👉🏻👉🏻
 import {onMount} from 'svelte';
 import {request} from 'framework7';
@@ -24,7 +24,9 @@ let props = {
   f7router,f7route,
 }
 onMount(async () => {
+
   //let data = (await request.json("https://untitled-6u5g49yuwqup.runkit.sh/tabs")).data
+
   if (true){
   let appdata = (await request.json("https://aceoetexam-default-rtdb.firebaseio.com/appdata.json")).data
   //tabs.set(data)

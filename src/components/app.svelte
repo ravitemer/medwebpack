@@ -185,6 +185,7 @@
       if (f7.device.cordova) {
         //cordovaApp.init(f7);
       }
+     
 
       // Call F7 APIs here
      
