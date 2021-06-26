@@ -1,7 +1,7 @@
 <Page ptr>
 
   <Main  {...props}>
-   <Block><h1 on:click={() => f7.sheet.open(".step")}>Listening Slot</h1></Block>
+   <Block><h1 on:click={() => f7.sheet.open(".step")}>Listeningg Slot</h1></Block>
   </Main>
 
 </Page>
