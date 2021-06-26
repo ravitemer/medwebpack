@@ -44,8 +44,7 @@
     <PageContent>
       <Block>
         <p>
-          Iusto, est corrupti! Totam minus voluptas natus esse possimus nobis, delectus veniam
-          expedita sapiente ut cum reprehenderit aliquid odio amet praesentium vero temporibus
+          Iusto, est corrupti! Totam minus amet praesentium vero temporibus
           obcaecati beatae aspernatur incidunt, perferendis voluptates doloribus?
         </p>
         <p>
