@@ -44,7 +44,7 @@
     <PageContent>
       <Block>
         <p>
-          Iusto, kkest corrupti! Totam minus amet praesentium vero temporibus
+          Iusto, minus amet praesentium vero temporibus
           obcaecati beatae aspernatur incidunt, perferendis voluptates doloribus?
         </p>
         <p>
