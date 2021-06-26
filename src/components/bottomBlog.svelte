@@ -16,8 +16,7 @@ const Load = async (view="Grid view") =>{
                           data : params,
                           headers : {Authorization : "Bearer keyX4ugTRmF0cbHdc"},
                           dataType : "json",
-                          success: (d,x,y) => console.log("success",y),
-                          error : (e) => console.log("error",e)
+                         
                                             }
                           let records = (await request(options)).data.records
                           return records

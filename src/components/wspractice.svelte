@@ -1,44 +1,76 @@
- <BlockTitle class="margin-top" medium>Practice</BlockTitle>
-
-  <List class="no-margin-top" accordionList accordionOpposite inset>
-  {#each accordionItems as {title,accordItems},i (i)}
-   <ListItem accordionItem badge={accordItems.length} badgeColor="teal" title={title}>
-      <AccordionContent>
-        <List inset>
-        {#each accordItems as {title,base},i (i)}
-          <ListItem href={base + i} {title}/>
-        {/each}
-        </List>
-      </AccordionContent>
-    </ListItem>
-  {/each}
-  </List>
-
 <script>  
-import {List,ListItem,AccordionContent,BlockTitle,Badge} from 'framework7-svelte';
-import {scale} from 'svelte/transition';
-import {tabs} from "../js/store.js"
-export let tab;
-$ : accordionItems = generateAccordionItems($tabs,tab) 
-  
+import {List,ListItem,AccordionContent,BlockTitle,Badge,Button} from 'framework7-svelte';
+import {fade,scale,slide,fly,blur} from 'svelte/transition';
 
+import {tabs} from "../js/store.js"
+
+export let f7router;
+export let tab;
+
+let showAccordion = true;
+$ : accordionItems = generateAccordionItems($tabs,tab) 
+$ :  tests = showAccordion ? [] : getTests($tabs,tab) 
+   
 function generateAccordionItems(tabs,tab){
-  //console.log("generated accorditems",tab)
-       let types = tab === 2 ? Object.entries(tabs[2].children["Tests"]) : Object.entries(tabs[3].children["Tests"]["types"])
-       return types.map(([type,arr]) => {
-           let accordItems = getAccordSubItems(arr,type,tab)
-           return {
-           title : tab === 2 ? type + " letters" : type,
-           accordItems}
+       let acTypes = Object.entries(tabs[tab].children["Tests"]["types"])
+       return acTypes.map(([accordionTitle,acArr]) => {
+           let accordionTests = getAccordTests(acArr,tab)
+           return {accordionTitle , accordionTests}
            })
+           
 }
-function getAccordSubItems(accordChildren,type,tab){
+function getAccordTests(acChildren,tab){
     let ar = []
-    for (let listItem of accordChildren) {
-        let base = tab === 2 ? `/WIntro/${type}/` : `/SIntro/${type}/`
-        ar.push({base,title: listItem.title ? listItem.title : listItem})
+    for (let testTitle of acChildren) {
+        let testHref = `/TestIntro/${tab}/${testTitle}`
+        ar.push({testHref ,testTitle})
      }
      return ar
 }
 
+function getTests(tabs,tab){
+    let arr = []
+    //cccccc 
+    let curtests = tabs[tab].children["Tests"]["tests"]
+    for (let testTitle of Object.keys(curtests)) {
+      //ccccc
+      let testHref = `/TestIntro/${tab}/${testTitle}`;
+      //cccc
+      arr.push({testHref,testTitle})
+     }
+     return arr
+}
+
 </script>
+
+<!--HTML-->
+
+<BlockTitle class=" display-flex justify-content-space-between margin-top" medium>Practice <Button onClick={() => showAccordion = !showAccordion}><span style="font-size:1.1em" class={showAccordion ? "fas fa-arrows-alt-v" : "fas fa-angle-double-down"}></span></Button> </BlockTitle>
+{#if showAccordion}
+      <List class="no-margin-top" accordionList accordionOpposite inset>
+      {#each accordionItems as {accordionTitle,accordionTests},i (i)}
+      <div in:scale>
+       <ListItem accordionItem badge={accordionTests.length} badgeColor="teal" title={accordionTitle}>
+      
+          <AccordionContent>
+            <List inset>
+            {#each accordionTests as {testTitle, testHref},i (i)}
+              <ListItem href={testHref} title={testTitle}/>
+            {/each}
+            </List>
+          </AccordionContent>
+        </ListItem>
+            </div>
+        {/each}
+      </List>
+{:else}
+        <List class="no-margin-top" inset>
+      {#each tests as {testTitle, testHref},i (i)}
+      <div in:scale>
+      <ListItem href={testHref}>
+         {testTitle}
+      </ListItem>
+             </div>
+      {/each}
+      </List>
+{/if}
