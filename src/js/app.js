@@ -1,9 +1,9 @@
 // Import Framework7
-import Framework7 from 'framework7/lite-bundle';
+import Framework7 from './f7custom';
 
 // Import Framework7-Svelte Plugin
 import Framework7Svelte from 'framework7-svelte';
-
+import "./f7custom.css"
 /*import welcomescreen from 'f7-welcomescreen';
 
 var welcomescreen_slides = [

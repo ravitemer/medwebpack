@@ -1,6 +1,7 @@
 import {writable} from 'svelte/store'
 export const temp = writable({title : "Bad Network",desc : "Oops ! Please check your connection"})
 export const tempObj = writable({})
+export const trigger = writable("settings")
 export const tempTest = writable({})
 export const ltests = writable([
   

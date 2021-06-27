@@ -4,8 +4,7 @@ import {onMount} from "svelte";
 
 import TopSwiper from "../components/topSwiper.svelte";
 import MyNavBar from '../components/mynavbar.svelte';
-import LRPractice from '../components/lrpractice.svelte';
-import WSPractice from '../components/wspractice.svelte';
+import Practice from '../components/practice.svelte';
 import {tabs,tempObj} from "../js/store.js"
 
 export let f7router
@@ -22,5 +21,5 @@ function handleSlideClick(slide){f7router.navigate(`/about/${tab}/${slide}/`)}
 <MyNavBar {title}/>
 <BlockTitle class="margin-top" medium>Structure</BlockTitle>
 <TopSwiper {tab} on:slideClick={e => handleSlideClick(e.detail.slide)} />
-<WSPractice {f7router} {tab}/>
+<Practice {f7router} {tab}/>
 <slot></slot>

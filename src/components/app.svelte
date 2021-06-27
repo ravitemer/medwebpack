@@ -56,28 +56,11 @@
     </PageContent>
   </Sheet>
 
- <Popup swipeToClose push id="postPopup" class="demo-popup-push">
+ <Popup swipeToClose push id="envPopup" class="demo-popup-push">
     <View>
-      <Page>
-        <Navbar title="Push Popup" large transparent>
-          <NavRight>
-            <Link popupClose>Close</Link>
-          </NavRight>
-        </Navbar>
-        <Block>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris
-            leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac
-            urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia
-            venenatis dignissim. Suspendisse non nisl semper tellus malesuada suscipit eu et eros.
-            Nulla eu enim quis quam elementum vulputate. Mauris ornare consequat nunc viverra
-            pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed libero
-            mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor.
-            Suspendisse a faucibus lectus.
-          </p>
-       
-        </Block>
-      </Page>
+      { #if $trigger === "settings"}
+          <Settings/>
+      {/if}
     </View>
   </Popup>
   
@@ -105,6 +88,8 @@
   import { onMount } from 'svelte';
   import { getDevice }  from 'framework7/lite-bundle';
   import MyNavBar from "./mynavbar.svelte";
+  import Settings from "../pages/settings.svelte";
+  import {trigger} from "../js/store.js";
   import {
     f7,
     f7ready,
