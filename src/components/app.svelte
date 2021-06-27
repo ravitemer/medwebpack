@@ -58,9 +58,8 @@
 
  <Popup swipeToClose="bottom" push id="envPopup" class="demo-popup-push">
     <View>
-      { #if $trigger === "settings"}
+      
           <Settings/>
-      {/if}
     </View>
   </Popup>
   

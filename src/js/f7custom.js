@@ -56,7 +56,7 @@ import Tabs from '../../node_modules/framework7/esm/components/tabs/tabs';
 ////import Card from '../../node_modules/framework7/esm/components/card/card';
 ////import Chip from '../../node_modules/framework7/esm/components/chip/chip';
 // import Form from './components/form/form';
-//import Input from '../../node_modules/framework7/esm/components/input/input';
+import Input from '../../node_modules/framework7/esm/components/input/input';
 ////import Checkbox from '../../node_modules/framework7/esm/components/checkbox/checkbox';
 //import Radio from './components/radio/radio';
 //import Toggle from './components/toggle/toggle';
@@ -126,8 +126,8 @@ Framework7.use([
   //Panel, 
   //Card, 
   //Chip, 
-  //Form, 
-//Input, 
+  //Form,
+  Input, 
   //Checkbox, 
   //Radio, 
   //Toggle, 
