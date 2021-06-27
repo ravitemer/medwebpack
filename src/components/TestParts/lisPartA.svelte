@@ -13,9 +13,9 @@ export let desc;
    <BlockHeader>{@html extract1.desc}</BlockHeader>
    {#each extract1.headings as [subheading,content],i (i)}
       <h3 class="text-color-teal">{subheading}</h3>
-      <p style="font-size:1.3em">
+      <div style="font-size:1.3em">
      {@html content.para.replaceAll(/{[^{].*}/g, '<input  class="text-color-green" style=";border-radius:2px;border-bottom:1px solid gray;width:120px;padding:3px;display:inline" type="text"/>')}
-      </p>
+      </div>
     {/each}
  </Block>
  <BlockTitle medium>Extract 2 : Q13-24</BlockTitle>
@@ -24,8 +24,8 @@ export let desc;
     {#each extract2.headings as [subheading,content],i (i)}
     
       <h3 class="text-color-teal">{subheading}</h3>
-      <p style="font-size:1.3em">
+      <div style="font-size:1.3em">
       {@html content.para.replaceAll(/{[^{].*}/g, '<input  class="text-color-green" style="color:green;border-radius:2px;border-bottom:1px solid gray;width:120px;padding:3px;display:inline" type="text"/>')}
-      </p>
+      </div>
     {/each}
 </Block>
