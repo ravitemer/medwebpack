@@ -1,5 +1,5 @@
 <script>  
-import {Page,Block,BlockTitle,BlockFooter,BlockHeader,Navbar,NavLeft,NavRight,Link,PageContent} from "framework7-svelte";
+import {Page,Block,BlockTitle,BlockFooter,BlockHeader,Navbar,NavLeft,NavRight,Link,PageContent,Col,Row} from "framework7-svelte";
 
 
 </script>
@@ -10,13 +10,21 @@ import {Page,Block,BlockTitle,BlockFooter,BlockHeader,Navbar,NavLeft,NavRight,Li
       <Link popupClose>Close</Link>
     </NavRight>
   </Navbar>
-  <PageContent>
-    <Block strong>
-        <img alt="profile-pic" src={"https://i.picsum.photos/id/237/200/300.jpg"}/>
-      this is a Block which contains some content can be of 10 words change it to whatever you may like￼
+  <BlockTitle medium> Profile</BlockTitle>
+    <Block class="padding-half" strong>
+    <div>
+      <Row class="align-items-center" resizable>
+        <Col width="25">
+          <img style="width:64px;border-radius:50%;" alt="profile-pic" src="https://picsum.photos/780.jpg"/>
+        </Col>
+        <Col  width="75">
+          <p style="font-size:1.2em">Raviteja Medarametla<br/> <small class="text-color-gray">Medicine</small> </p>
+        
+        </Col>
+      </Row>
+     </div>
     </Block>
     <BlockFooter>
       Here goes some description￼ is that clear￼
     </BlockFooter>
-  </PageContent>
 </Page>

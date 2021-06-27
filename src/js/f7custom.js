@@ -74,7 +74,7 @@ import PullToRefresh from '../../node_modules/framework7/esm/components/pull-to-
 ////import Searchbar from '../../node_modules/framework7/esm/components/searchbar/searchbar';
 //import Messages from '../../node_modules/framework7/esm/components/messages/messages';
 //import Messagebar from '../../node_modules/framework7/esm/components/messagebar/messagebar';
-////import Swiper from '../../node_modules/framework7/esm/components/swiper/swiper';
+import Swiper from '../../node_modules/framework7/esm/components/swiper/swiper';
 //import PhotoBrowser from './components/photo-browser/photo-browser';
 //import Notification from './components/notification/notification';
 //import Autocomplete from './components/autocomplete/autocomplete';
@@ -145,7 +145,7 @@ Framework7.use([
   //Searchbar, 
   //Messages, 
   //Messagebar, 
-  //Swiper, 
+  Swiper, 
   //PhotoBrowser, 
   //Notification, 
   //Autocomplete, 
